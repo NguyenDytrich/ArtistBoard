@@ -8,7 +8,7 @@ const EmailField: React.FC<{
 }> = ({ value, onChange, className }) => {
   return (
     <Form.Group className={className}>
-      <Form.Label style={{ marginBottom: "0.25em" }}>Email</Form.Label>
+      <Form.Label>Email</Form.Label>
       <Form.Control
         required
         value={value}

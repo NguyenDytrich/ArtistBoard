@@ -16,7 +16,7 @@ const PasswordField: React.FC<{
   return (
     <Form.Group className={`${className} mt-${mt}`}>
       <Form.Group>
-        <Form.Label style={{ marginBottom: "0.25em" }}>Password</Form.Label>
+        <Form.Label>Password</Form.Label>
         <Form.Control
           required
           value={fields.password}
@@ -26,7 +26,7 @@ const PasswordField: React.FC<{
         />
       </Form.Group>
       <Form.Group className={`mt-${mt}`}>
-        <Form.Label style={{ marginBottom: "0.25em" }}>
+        <Form.Label>
           Confirm Password
         </Form.Label>
         <Form.Control

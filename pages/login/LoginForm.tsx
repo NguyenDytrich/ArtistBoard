@@ -17,7 +17,7 @@ const LoginForm: React.FC<{
   return (
     <Form noValidate className={className} onSubmit={onSubmit}>
       <Form.Group>
-        <Form.Label style={{ marginBottom: "0.25em" }}>Email</Form.Label>
+        <Form.Label>Email</Form.Label>
         <Form.Control
           className={validation.email ? "is-invalid" : ""}
           value={value.email}
@@ -28,7 +28,7 @@ const LoginForm: React.FC<{
         <div className="invalid-feedback">{validation.email}</div>
       </Form.Group>
       <Form.Group className="pt-3">
-        <Form.Label style={{ marginBottom: "0.25em" }}>Password</Form.Label>
+        <Form.Label>Password</Form.Label>
         <Form.Control
           className={validation.password ? "is-invalid" : ""}
           value={value.password}

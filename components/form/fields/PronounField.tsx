@@ -8,7 +8,7 @@ const PronounField: React.FC<{
 }> = ({ value, onChange, className }) => {
   return (
     <Form.Group className={className}>
-      <Form.Label style={{ marginBottom: "0.25em" }}>Pronouns</Form.Label>
+      <Form.Label>Pronouns</Form.Label>
       <Form.Control
         required
         value={value}

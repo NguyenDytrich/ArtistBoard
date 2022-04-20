@@ -1,0 +1,26 @@
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+
+.cell {
+    text-align: center;
+    padding: 0.125em 0.35em 0.25em 0.35em;
+}
+
+.interactive {
+    cursor: pointer;
+    border-radius: $border-radius;
+}
+
+.day {
+    &:hover {
+        background-color: $gray-400;
+    }
+}
+
+.selected {
+    color: $white;
+    background-color: $primary;
+    &:hover {
+        background-color: shade-color($primary, $btn-hover-bg-shade-amount);
+    }
+}

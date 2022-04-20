@@ -14,7 +14,7 @@ const NameField: React.FC<{
 }> = ({ className, fields, onChange }) => {
   return (
     <Form.Group className={className}>
-      <Form.Label style={{ marginBottom: "0.25em" }}>Name</Form.Label>
+      <Form.Label>Name</Form.Label>
       <div className="input-group">
         <Form.Control
           required

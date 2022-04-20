@@ -1,4 +1,4 @@
-import "bootstrap/dist/css/bootstrap.min.css";
+import "../styles/scss/globals.scss";
 import type { AppProps } from "next/app";
 import { initializeApp } from "firebase/app";
 import { firebaseConfig } from "../utils/firebase";
