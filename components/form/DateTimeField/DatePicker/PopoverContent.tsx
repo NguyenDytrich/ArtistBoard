@@ -2,7 +2,7 @@ import { forwardRef, useState } from "react";
 import { Button, Col, Popover, Row, Table } from "react-bootstrap";
 import { DateTime } from "luxon";
 
-import styles from "../../../styles/scss/DatePicker.module.scss";
+import styles from "../../../../styles/scss/DatePicker.module.scss";
 
 interface PopoverContentProps {
   selectedDate: DateTime;

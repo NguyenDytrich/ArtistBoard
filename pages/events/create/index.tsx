@@ -19,9 +19,9 @@ import {
   CalendarEventFormFields,
   EventPublishState,
 } from "../../../components/calendar";
-import DatePicker from "../../../components/calendar/DatePicker";
 import { FieldHandler } from "../../../components/form";
 import BaseLayout from "../../../components/form/BaseLayout";
+import DateTimeField from "../../../components/form/DateTimeField";
 
 // TODO (Dytrich): Wait or create custom WYSIWYG
 // const Editor = dynamic(() => import("../../../components/form/Editor"), {
@@ -81,22 +81,7 @@ const CreateEventForm: React.FC = () => {
               />
             </Form.Group>
             <Form.Group className="mt-2">
-              <InputGroup className="flex-nowrap">
-                <Form.Group className="col-6 me-1">
-                  <Form.Label>Date</Form.Label>
-                  <InputGroup>
-                    <DatePicker />
-                  </InputGroup>
-                </Form.Group>
-                <Form.Group className="flex-shrink-1 mx-1">
-                  <Form.Label>Start</Form.Label>
-                  <Form.Control type="text" placeholder={"08:00 AM"} />
-                </Form.Group>
-                <Form.Group className="flex-shrink-1 ms-1">
-                  <Form.Label>End</Form.Label>
-                  <Form.Control type="text" placeholder={"09:00 AM"} />
-                </Form.Group>
-              </InputGroup>
+                <DateTimeField />
             </Form.Group>
             <Form.Group className="mt-2">
               <div>

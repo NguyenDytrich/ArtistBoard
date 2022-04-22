@@ -3,8 +3,10 @@ import { useState } from "react";
 import { Button, Form, OverlayTrigger } from "react-bootstrap";
 import PopoverContent from "./PopoverContent";
 
-const DatePicker: React.FC = () => {
-  const [selectedDate, setSelecteDate] = useState(DateTime.now());
+const DatePicker: React.FC<{
+  date: DateTime;
+  onChange: (date: DateTime) => void;
+}> = ({date, onChange}) => {
   const [showPopover, setShowPopover] = useState(false);
 
   return (
@@ -16,9 +18,9 @@ const DatePicker: React.FC = () => {
       rootClose={true}
       overlay={
         <PopoverContent
-          selectedDate={selectedDate}
+          selectedDate={date}
           onSelect={(date) => {
-            setSelecteDate(date);
+            onChange(date);
             setShowPopover(false);
           }}
         />
@@ -26,7 +28,7 @@ const DatePicker: React.FC = () => {
     >
       <Form.Control
         type="text"
-        value={selectedDate.toFormat("LLLL dd, yyyy")}
+        value={date.toFormat("LLLL dd, yyyy")}
       />
     </OverlayTrigger>
   );
