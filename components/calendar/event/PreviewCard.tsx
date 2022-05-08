@@ -1,5 +1,5 @@
 import { DateTime } from "luxon";
-import { Card } from "react-bootstrap";
+import { Card, Col, OverlayTrigger, Row, Tooltip } from "react-bootstrap";
 
 interface EventPreviewProps {
   date: DateTime;
@@ -24,6 +24,7 @@ const PreviewCard: React.FC<EventPreviewProps> = ({
         <div
           style={{
             textAlign: "right",
+            minWidth: "6rem",
             width: "6rem",
             paddingRight: "1em",
             marginLeft: "1em",
@@ -36,7 +37,6 @@ const PreviewCard: React.FC<EventPreviewProps> = ({
         </div>
         <div
           style={{
-            marginTop: "0.75rem",
             flexGrow: 1,
             marginRight: "1em",
             display: "flex",
@@ -45,15 +45,33 @@ const PreviewCard: React.FC<EventPreviewProps> = ({
           }}
         >
           <div>
+            <div style={{float: "right" }}>
+              <OverlayTrigger overlay={<Tooltip>Go event page</Tooltip>}>
+                <i className="bi-box-arrow-up-right"></i> 
+              </OverlayTrigger>
+            </div>
             <h3 className="mb-0">{title}</h3>
             {tagline ? <div className="text-muted small">{tagline}</div> : null}
             <div className="text-muted small">by {organizer}</div>
           </div>
-          <div className="text-end">
-            <a className="small" href={url}>
-              Details
-            </a>
-          </div>
+          <Row className={tagline ? "mt-3" : ""}>
+            <Col>
+              <OverlayTrigger overlay={<Tooltip>Comment</Tooltip>}>
+                <span><i className="bi-chat"></i> 23</span>
+              </OverlayTrigger>
+            </Col>
+            <Col>
+              <OverlayTrigger overlay={<Tooltip>Like</Tooltip>}>
+                <span><i className="bi-heart"></i> 50</span>
+              </OverlayTrigger>
+            </Col>
+            <Col>
+              <OverlayTrigger overlay={<Tooltip>RSVP</Tooltip>}>
+                <span><i className="bi-calendar"></i> 99+</span>
+              </OverlayTrigger>
+            </Col>
+          </Row>
+
         </div>
       </div>
     </Card>

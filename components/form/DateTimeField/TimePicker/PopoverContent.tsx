@@ -18,7 +18,7 @@ const PopoverContent: React.FC<TimePickerPopoverProps> = forwardRef<
       scrollRef.current.scrollIntoView();
       setLoaded(true);
     }
-  });
+  }, [loaded]);
 
   const list = () => {
     const listItems = [];
@@ -44,11 +44,11 @@ const PopoverContent: React.FC<TimePickerPopoverProps> = forwardRef<
   };
   return (
     <Popover ref={ref} {...props}>
-      <Popover.Body style={{ padding: "0.25em 0em" }}>
+      <Popover.Body style={{ padding: "0.25em 0em", overflowY: "scroll"}}>
         <ListGroup
           activeKey={selectedKey}
           variant="flush"
-          style={{ maxHeight: "10em", overflow: "scroll" }}
+          style={{ maxHeight: "10em" }}
         >
           {list()}
         </ListGroup>
@@ -56,5 +56,6 @@ const PopoverContent: React.FC<TimePickerPopoverProps> = forwardRef<
     </Popover>
   );
 });
+PopoverContent.displayName = 'TimePickerPopover';
 
 export default PopoverContent;

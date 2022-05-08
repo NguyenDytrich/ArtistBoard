@@ -15,11 +15,14 @@ const TopNav: React.FC = () => {
   return (
     <Navbar className="px-3 d-flex justify-content-between">
       <Nav>
-        <Link href="/">
+        <Link href="/" passHref>
           <Navbar.Brand style={{ cursor: "pointer" }}>ArtistBoard</Navbar.Brand>
         </Link>
         <Link href="/">
           <a className="nav-link">Home</a>
+        </Link>
+        <Link href="/">
+          <a className="nav-link">Marketplace</a>
         </Link>
         <Link href="/about">
           <a className="nav-link">About</a>

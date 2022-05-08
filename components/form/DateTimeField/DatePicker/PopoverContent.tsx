@@ -101,8 +101,8 @@ const PopoverContent: React.FC<PopoverContentProps> = forwardRef<
               <th className={styles.cell}>F</th>
               <th className={styles.cell}>S</th>
             </tr>
-            {dates().map((v) => (
-              <tr>{v}</tr>
+            {dates().map((v, i) => (
+              <tr key={i}>{v}</tr>
             ))}
           </thead>
         </Table>
@@ -110,5 +110,6 @@ const PopoverContent: React.FC<PopoverContentProps> = forwardRef<
     </Popover>
   );
 });
+PopoverContent.displayName = 'DatePickerPopover';
 
 export default PopoverContent;
